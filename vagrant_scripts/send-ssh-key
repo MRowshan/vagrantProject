@@ -1,2 +1,3 @@
 #!/bin/bash
+
 cd /vagrant && cp id_rsa ~/.ssh

@@ -6,8 +6,9 @@
   private_ip: 10.0.10.10
   package_manager: yum
   packages:
+  - git
   scripts:
-  - send-ssh-key
+  - ssh_script
 
 - name: machine-2
   box: centos/7
@@ -16,6 +17,7 @@
   private_ip: 10.0.10.11
   package_manager: yum
   packages:
+  - git
   scripts:
-  - take-ssh-key
+  - ssh_script
 ...

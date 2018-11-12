@@ -1,8 +1,16 @@
 #!/bin/bash
 
+home="/home/mustakim"
+
 sudo useradd mustakim
-sudo su - mustakim
-ssh-keygen
-cd .ssh
-public_key=$(cat id_rsa.pub)
-echo $public_key >> authorized_keys
+
+sudo mkdir -p $home/.ssh
+
+sudo cp /vagrant/id_rsa $home/.ssh
+
+sudo cp /vagrant/id_rsa.pub $home/.ssh/authorized_keys
+
+sudo chown -R mustakim:mustakim $home
+
+sudo chmod 600 $home/.ssh/id_rsa
+
