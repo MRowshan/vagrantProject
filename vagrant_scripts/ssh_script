@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo useradd mustakim
+sudo su - mustakim
+ssh-keygen
+cd .ssh
+public_key=$(cat id_rsa.pub)
+echo $public_key >> authorized_keys

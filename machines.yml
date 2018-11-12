@@ -1,0 +1,21 @@
+---
+- name: machine-1
+  box: centos/7
+  cpus: 1
+  memory: 2048
+  private_ip: 10.0.10.10
+  package_manager: yum
+  packages:
+  scripts:
+  - send-ssh-key
+
+- name: machine-2
+  box: centos/7
+  cpus: 1
+  memory: 2048
+  private_ip: 10.0.10.11
+  package_manager: yum
+  packages:
+  scripts:
+  - take-ssh-key
+...
