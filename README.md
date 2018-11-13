@@ -15,7 +15,7 @@ Deleting VM's `vagrant destroy`
 ## YAML file
 
 Machines are defined in the `machines.yml` file 
-```
+```yaml
 - name: machine-1
   box: centos/7
   cpus: 1
