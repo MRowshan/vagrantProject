@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
 			set_private_ip(user_vm, user['private_ip'])
 			install_packages(user_vm, user['package_manager'], user['packages'])
 			run_scripts(user_vm, user['scripts'])
+			add_users(user_vm, user['users'])
 		end
 	end
 end
@@ -55,5 +56,13 @@ end
 def run_scripts(user_vm, scripts)
 	scripts.each do |script|
   		user_vm.vm.provision "shell", path: "vagrant_scripts/#{script}"
+	end
+end
+
+def add_users(user_vm, users)
+	users.each do |user|
+		user_vm.vm.provision "shell", inline: <<-SHELL
+			sudo useradd #{user}
+	SHELL
 	end
 end

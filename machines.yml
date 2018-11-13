@@ -10,10 +10,14 @@
   - java
   - wget
   scripts:
-  - ssh-script
+#  - ssh-script
   - jenkins-script
   - nexus-script
   - go-script
+  users:
+  - user1
+  - user2
+  - user3
 
 - name: machine-2
   box: centos/7
@@ -24,5 +28,10 @@
   packages:
   - git
   scripts:
-  - ssh-script
+#  - ssh-script
+  - go-script
+  users:
+  - user1
+  - user2
+  - user3
 ...
