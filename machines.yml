@@ -9,6 +9,8 @@
   - git
   scripts:
   - ssh_script
+  - jenkins-script
+  - nexus-script
 
 - name: machine-2
   box: centos/7

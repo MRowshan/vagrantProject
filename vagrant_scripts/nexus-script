@@ -1,0 +1,29 @@
+#!/bin/bash
+
+sudo yum install java -y
+sudo yum install wget -y
+
+sudo wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+sudo tar xvf latest-unix.tar.gz -C /opt
+sudo ln -s /opt/nexus-3.14.0-04/ /opt/nexus
+
+sudo adduser nexus
+sudo chown -R nexus:nexus /opt/nexus /opt/nexus-3.14.0-04 /opt/sonatype-work
+
+sudo echo run_as_user="nexus" > /opt/nexus/bin/nexus.rc
+#sudo vim /opt/nexus/bin/nexus.rc
+#	run_as_user="nexus"   
+#	:wq
+
+sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+sudo systemctl enable nexus
+
+#sudo service nexus start
+
+#upload file
+sudo yum install zip -y
+#curl -v -u admin:admin123 --upload-file "fileName" http://localhost:8081/repository/"repoName"/"fileName"
+
+#download file
+sudo yum install unzip -y
+#curl -O localhost:8081/repository/"repoName"/"fileName"

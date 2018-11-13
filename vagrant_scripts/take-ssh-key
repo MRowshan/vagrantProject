@@ -1,2 +1,0 @@
-#!/bin/bash
-cd /vagrant && cat id_rsa.pub >> authorized_keys
