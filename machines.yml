@@ -7,19 +7,22 @@
   package_manager: yum
   packages:
   - git
+  - java
+  - wget
   scripts:
-  - ssh_script
+  - ssh-script
   - jenkins-script
   - nexus-script
+  - go-script
 
 - name: machine-2
   box: centos/7
   cpus: 1
   memory: 2048
-  private_ip: 10.0.10.11
+  private_ip: 10.0.10.10
   package_manager: yum
   packages:
   - git
   scripts:
-  - ssh_script
+  - ssh-script
 ...
